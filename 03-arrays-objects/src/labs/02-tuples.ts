@@ -6,3 +6,17 @@
  */
 
 // TODO: StudentScore 타입 선언, scores 배열 생성, passed 계산
+type StudentScore = [string, number];
+
+let scores: StudentScore[] = [
+  ["eunji", 85],
+  ["minsu", 67],
+  ["sora", 92],
+];
+
+let passed: string[] = scores
+  .filter(([name, score]) => score >= 70)
+  .map(([name, score]) => name);
+
+console.log("scores:", scores);
+console.log("passed:", passed); // ["eunji", "sora"]

@@ -5,6 +5,11 @@
  * - 매개변수: obj (임의의 객체)
  * - 반환값: (keyof T)[] 타입의 배열 (객체의 키 배열)
  *
+ * 객체의 키 이름은 모두 string 으로 처리됨. (id=>"id", 0 => "0")
+ * 
+ * keyof T는 객체 타입 T의 모든 키 이름들을 유니온 타입으로 만든 것
+ * (keyof T)[] : 그 키 이름들로 이루어진 배열
+ * 
  * [요구사항]
  * 1. 제네릭 함수로 작성할 것
  * 2. 반환 타입은 (keyof T)[]가 되도록 선언할 것
@@ -16,7 +21,19 @@
  */
 
 // TODO: 여기에 getObjectKeys 함수를 작성하세요.
+function getObjectKeys<T extends Object>(obj:T):(keyof T)[]{
+    return Object.keys(obj) as (keyof T)[]
+}
+
+//Object.keys(obj)
+// 자바스크립트 내장 함수
+// 객체의 key 값들만 문자열 배열로 반환
+// 항상 string[] 타입이 반환됨
+// 예: { id: 1, name: "유저" } → ["id", "name"]
 
 // 아래 코드를 복사해 결과를 확인해 보세요.
 const keys1 = getObjectKeys({ id: 1, name: "유저" }); // ["id", "name"]
 const keys2 = getObjectKeys({ a: 1, b: 2, c: 3 }); // ["a", "b", "c"]
+
+console.log(keys1);
+console.log(keys2);

@@ -8,3 +8,16 @@
 const add = (a: number, b: number) => a + b;
 calculate(10, 20, add) // 30
 */
+type Operation = (a:number,b:number) => number;
+
+const add = (a: number, b: number) => a + b;
+const sub = (a: number, b: number) => a - b;
+const mul = (a: number, b: number) => a * b;
+const div = (a: number, b: number) => a / b;
+
+function calculate(a:number, b:number, cal:Operation){return cal(a,b);};
+
+console.log(calculate(1,2,add));
+console.log(calculate(1,2,sub));
+console.log(calculate(1,2,mul));
+console.log(calculate(1,2,div));

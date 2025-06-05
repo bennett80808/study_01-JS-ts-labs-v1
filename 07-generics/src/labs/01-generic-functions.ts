@@ -17,8 +17,15 @@
  */
 
 // TODO: 여기에 getLastElement 함수를 작성하세요.
-
+function getLastElement<T>(arr:T[]|undefined): T|undefined{
+    if(arr){return arr[arr.length-1]}
+    else return undefined;
+}
 // 아래 코드를 복사해 결과를 확인해 보세요.
 const n = getLastElement([1, 2, 3]); // 3
 const w = getLastElement(["a", "b"]); // 'b'
 const e = getLastElement([]); // undefined
+
+console.log(n);
+console.log(w);
+console.log(e);

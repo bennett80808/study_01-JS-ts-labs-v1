@@ -14,3 +14,21 @@ const users = [
 const isActiveUser = (u: User) => u.isActive;
 findUser(users, isActiveUser) // { id: 2, name: 'Lee', isActive: true }
 */
+type User = {
+  id: number;
+  name: string;
+  isActive: boolean;
+};
+type Predicate = (user:User) => boolean
+
+const users = [
+  { id: 1, name: 'Kim', isActive: false },
+  { id: 2, name: 'Lee', isActive: true }
+];
+function findUser(users:User[], predicate:Predicate):User|undefined{
+  return users.find(predicate);
+}
+//find:"배열에서 조건을 만족하는 첫 번째 요소를 찾아 반환"하는 메서드
+
+const isActiveUser = (u: User) => u.isActive;
+console.log(findUser(users, isActiveUser));

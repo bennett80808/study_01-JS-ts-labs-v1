@@ -6,3 +6,5 @@
 예시)
 sum([1, 2, 3]) // 6
 */
+function sum(nums:number[]):number{return nums.reduce((acc,cur)=>acc+cur,0)};
+sum([1,2,3]);

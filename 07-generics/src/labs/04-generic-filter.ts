@@ -18,7 +18,20 @@
  */
 
 // TODO: 여기에 myFilter 함수를 작성하세요.
-
+// predicate:(item: T)=> boolean) : item이라는 값을 받아서 boolean 값을 리턴하는 함수
+ 
+function myFilter<T>(arr:T[], predicate:(item: T)=> boolean):T[]{
+    const result : T[] = [];
+    for(const item of arr){
+        if(predicate(item)){
+            result.push(item);
+        }
+    }
+    return result;
+}
 // 아래 코드를 복사해 결과를 확인해 보세요.
 const odds = myFilter([1, 2, 3, 4], (n) => n % 2 === 1); // [1, 3]
 const shortWords = myFilter(["apple", "hi", "bye"], (w) => w.length <= 3); // ["hi", "bye"]
+
+console.log(odds);
+console.log(shortWords);

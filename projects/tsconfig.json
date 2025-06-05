@@ -1,8 +1,18 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "strict": true
-    // "moduleDetection": "force"
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "noEmitOnError": true,
+    "rootDir": ".",       // 기준은 현재 폴더
+    "outDir": "."         // 결과물(js)이 같은 위치에 나오게
   },
-  "include": ["todo-app/public", "number-guess-app/public"]
+  "include": [
+    "./todo-app/public/**/*.ts",
+    "./number-guess-app/public/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"        // node_modules만 제외 (projects 전체 제외 X)
+  ]
 }

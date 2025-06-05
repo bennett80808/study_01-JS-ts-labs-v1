@@ -20,6 +20,8 @@ const { name, age } = user; // name: string, age: number
 
 const arr = [1, "two", false] as const;
 const [first, second, third] = arr; // first: 1, second: "two", third: false
+// const로 선언한 배열은 크기도 바꿀 수 있고, 내용물도 바꿀 수 있어. 
+// 단지 **"배열 변수 자체를 재할당할 수 없을 뿐"**이야.
 
 // 4. 함수의 리턴값 타입 추론
 function getNumber() {

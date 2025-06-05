@@ -8,10 +8,17 @@ type PushNotification = { deviceId: string; alert: string };
 type Notification = EmailNotification | SmsNotification | PushNotification;
 
 function sendNotification(notif: Notification) {
+  if("to" in notif){
+    console.log(notif.to, notif.subject, notif.body);
+  }else if ("phone" in notif){
+    console.log(notif.phone, notif.message);
+  }else if ("deviceId" in notif){
+    console.log(notif.deviceId, notif.alert);
+  }
   // 여기에 코드를 작성하세요.
 }
 
 // 사용 예시
-// sendNotification({ to: "a@b.com", subject: "Hi", body: "내용" });
-// sendNotification({ phone: "010-1234-5678", message: "문자" });
-// sendNotification({ deviceId: "xyz", alert: "푸시" });
+sendNotification({ to: "a@b.com", subject: "Hi", body: "내용" });
+sendNotification({ phone: "010-1234-5678", message: "문자" });
+sendNotification({ deviceId: "xyz", alert: "푸시" });

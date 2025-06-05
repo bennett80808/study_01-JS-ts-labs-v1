@@ -2,14 +2,14 @@
 // 유니온 타입 '|' 사용해서 풀어보기
 
 // 요일: "Mon"~"Fri" 중 하나만 허용
-// let dayOfWeek: /* TODO */
+let dayOfWeek: "Mon" | "Tue" | "Wen" | "Thur" | "Fri"; /* TODO */
 
 // dayOfWeek = "Mon";
 // dayOfWeek = "Fri";
 // dayOfWeek = "Sat"; // 이 줄은 에러가 나야 정상
 
 // yes/no만 허용
-// let answer: /* TODO */
+let answer: "yes" | "no"; /* TODO */
 
 // answer = "yes";
 // answer = "no";
